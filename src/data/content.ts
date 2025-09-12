@@ -7,12 +7,15 @@ const data = {
     phone: "+1 408-549-6932",
     location: "San Jose, CA",
     links: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/tanmayranaware" },
-      { label: "GitHub", href: "https://github.com/tanmayranware14" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/tanmayranaware14/" },
+      { label: "GitHub", href: "https://github.com/TanmayRanaware" },
       { label: "Download Resume", href: "/Tanmay_Ranaware_AI.pdf" }
     ]
   },
-  about: "Software engineer and AI practitioner with hands-on experience building LLM-powered systems, high-scale data pipelines, and production microservices. Comfortable across ML lifecycle (training, deployment, MLOps) and backend (Java/Spring, Python).",
+
+  about:
+    "Software engineer and AI practitioner with hands-on experience building LLM-powered systems, high-scale data pipelines, and production microservices. Comfortable across the ML lifecycle (training, deployment, MLOps) and backend (Java/Spring, Python). Passionate about reliable systems and shipping clean, measurable outcomes.",
+
   projects: [
     {
       title: "Tool Research AI-Agent",
@@ -27,27 +30,30 @@ const data = {
       links: []
     }
   ],
+
   experience: [
     {
-      company: "Blackbuck (Zinka Logistics) – Financial Services Team",
+      company: "Blackbuck (Zinka Logistics)",
       role: "Software Engineer",
       location: "Bangalore, India",
       period: "Jul 2023 – Jun 2025",
-      bullets: [
-        "Engineered LLM-powered document analysis workflows, cutting loan collection time by 40–50%.",
-        "Built account aggregator REST APIs (Java, Spring Boot, OneMoney) with circuit breaker patterns for 99.9% uptime.",
-        "Practiced TDD with 90%+ coverage to harden model integrations and accelerate safe ML deploys."
-      ]
-    },
-    {
-      company: "Blackbuck (Zinka Logistics) – GPS Team",
-      role: "Software Engineer",
-      location: "Bangalore, India",
-      period: "Jul 2023 – Jun 2025",
-      bullets: [
-        "Designed telemetry pipelines (Kafka, AWS Glue) processing 680GB/day for 20k+ IoT devices.",
-        "Built Spring Boot + MySQL + Redis services to cut device checkout latency 170s → 50s.",
-        "Improved observability and autoscaling to sustain 99.99% SLA across clusters."
+      subroles: [
+        {
+          team: "Financial Services Team",
+          bullets: [
+            "Engineered LLM-powered document analysis workflows, cutting loan collection time by 40–50%.",
+            "Built account aggregator REST APIs (Java, Spring Boot, OneMoney) with circuit breaker patterns for 99.9% uptime.",
+            "Practiced TDD with 90%+ coverage to harden model integrations and accelerate safe ML deploys."
+          ]
+        },
+        {
+          team: "GPS Team",
+          bullets: [
+            "Designed telemetry pipelines (Kafka, AWS Glue) processing 680GB/day for 20k+ IoT devices.",
+            "Built Spring Boot + MySQL + Redis services to cut device checkout latency 170s → 50s.",
+            "Improved observability and autoscaling to sustain 99.99% SLA across clusters."
+          ]
+        }
       ]
     },
     {
@@ -73,6 +79,7 @@ const data = {
       ]
     }
   ],
+
   achievements: [
     "Google Cloud Badges: Prompt Design in Vertex AI (Apr 2025)",
     "Build Real-World AI Apps with Gemini and Imagen (Apr 2025)",

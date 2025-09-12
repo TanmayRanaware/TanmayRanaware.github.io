@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
+
+/* Cards (light + dark) */
+.card {
+  @apply rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-6 border;
+  @apply bg-white text-neutral-900 border-neutral-200;
+}
+.dark .card { @apply bg-zinc-900 text-zinc-50 border-white/10; }
+
+/* Tech chips */
+.chip { @apply text-xs px-2 py-1 rounded-full border bg-zinc-100 border-neutral-300; }
+.dark .chip { @apply border-white/20 bg-white/5 text-zinc-100; }
+
+/* “Live” animated gradient behind hero */
+.hero-anim {
+  position: absolute; inset: 0; filter: blur(30px); opacity: 0.9;
+  background:
+    radial-gradient(120px 120px at 20% 30%, #a855f755, transparent 60%),
+    radial-gradient(140px 140px at 80% 30%, #9333ea55, transparent 60%),
+    radial-gradient(160px 160px at 50% 80%, #c084fc55, transparent 60%);
+  animation: heroFloat 10s ease-in-out infinite alternate; pointer-events: none;
+}
+@keyframes heroFloat { 0%{transform:translate3d(-8px,-6px,0) scale(1.02)} 100%{transform:translate3d(8px,6px,0) scale(1.04)} }
+
+/* Typing code layer */
+.hero-code{
+  position:absolute; inset:0; margin:0; padding:24px;
+  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size:13px; line-height:1.45; white-space:pre-wrap;
+  color:#c084fc; opacity:.85; mix-blend-mode:lighten; pointer-events:none;
+  mask-image:linear-gradient(to bottom, transparent, rgba(0,0,0,.9) 15%, rgba(0,0,0,1) 60%, transparent);
+}
+
+/* Carets */
+.caret{display:inline-block;width:8px;margin-left:2px;background:currentColor;animation:blink 1s steps(2,start) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.title-caret{display:inline-block;width:2px;height:.9em;margin-left:4px;background:currentColor;vertical-align:-.05em;animation:blink 1s steps(2,start) infinite}
+
+/* Page backgrounds */
+body { @apply bg-zinc-50 text-neutral-900 dark:bg-zinc-950 dark:text-zinc-50; }

@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Use *relative* asset paths so CSS/JS load no matter what
+// Relative base so assets load reliably on Pages
 export default defineConfig({
   plugins: [react()],
-  base: '',                 // << was '/' — change to ''
-  build: { outDir: 'docs' } // GitHub Pages serves from /docs
+  base: '',
+  build: { outDir: 'docs' }
 })
