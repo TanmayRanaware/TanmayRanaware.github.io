@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light dark; }
+
+/* Smooth card */
+.card {
+  @apply bg-card rounded-2xl shadow-soft p-6 transition-transform hover:-translate-y-1;
+}
+
+html { scroll-behavior: smooth; }
