@@ -2,11 +2,10 @@ import React from 'react'
 
 type Props = {
   email: string
-  phone?: string
   location?: string
 }
 
-export function Contact({ email, phone, location }: Props) {
+export function Contact({ email, location }: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {/* Email Card */}
@@ -31,29 +30,6 @@ export function Contact({ email, phone, location }: Props) {
         </div>
       </div>
 
-      {/* Phone Card */}
-      {phone && (
-        <div className="group relative bg-gradient-to-br from-emerald-900/20 to-cyan-900/20 backdrop-blur-sm border border-emerald-400/30 rounded-lg p-6 hover:border-emerald-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Phone</h3>
-            </div>
-            <a 
-              href={`tel:${phone}`}
-              className="text-emerald-300 hover:text-emerald-200 transition-colors duration-200 font-mono text-sm"
-            >
-              {phone}
-            </a>
-            <p className="text-gray-400 text-xs mt-2">Click to make a call</p>
-          </div>
-        </div>
-      )}
 
       {/* Location Card */}
       {location && (
