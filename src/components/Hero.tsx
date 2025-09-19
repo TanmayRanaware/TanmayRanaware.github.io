@@ -19,7 +19,7 @@ export function Hero({ name, title, tagline, links }: Props) {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6">
         {/* Main headline with floating animation */}
         <div className="mb-8 relative">
           {/* Floating accent elements */}
@@ -28,8 +28,8 @@ export function Hero({ name, title, tagline, links }: Props) {
           <div className="absolute -bottom-6 left-1/4 w-2 h-2 bg-emerald-500/20 rounded-full animate-pulse apple-floating-accent-3" />
           <div className="absolute -bottom-4 right-1/3 w-3 h-3 bg-cyan-500/20 rounded-full animate-pulse apple-floating-accent-4" />
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light tracking-tight text-gray-900 dark:text-white mb-4 apple-floating-enhanced">
-            {name}
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light tracking-tight text-gray-900 dark:text-white mb-4 apple-floating-enhanced whitespace-nowrap overflow-hidden">
+            <span className="block">{name}</span>
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
         </div>
