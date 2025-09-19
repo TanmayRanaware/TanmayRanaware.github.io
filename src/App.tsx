@@ -6,6 +6,7 @@ import { Experience } from './components/Experience'
 import { About } from './components/About'
 import { Achievements } from './components/Achievements'
 import { Contact } from './components/Contact'
+import { FadeIn, SlideIn, ScaleIn } from './components/animations'
 import data from './data/content'
 
 const App: React.FC = () => {
@@ -20,31 +21,53 @@ const App: React.FC = () => {
       <Navbar dark={dark} setDark={setDark} />
 
       <main className="max-w-6xl mx-auto px-4">
-        <Hero {...data.profile} />
+        <FadeIn duration={0.8} delay={0.2}>
+          <Hero {...data.profile} />
+        </FadeIn>
 
         <section id="about" className="py-12">
-          <h2 className="text-3xl font-extrabold mb-6 text-center">About Me</h2>
-          <About text={data.about} />
+          <SlideIn direction="left" delay={0.1}>
+            <h2 className="text-3xl font-extrabold mb-6 text-center">About Me</h2>
+          </SlideIn>
+          <SlideIn direction="left" delay={0.3}>
+            <About text={data.about} />
+          </SlideIn>
         </section>
 
         <section id="projects" className="py-12">
-          <h2 className="text-3xl font-extrabold mb-6 text-center">Projects</h2>
-          <Projects items={data.projects} />
+          <FadeIn delay={0.1}>
+            <h2 className="text-3xl font-extrabold mb-6 text-center">Projects</h2>
+          </FadeIn>
+          <ScaleIn delay={0.3}>
+            <Projects items={data.projects} />
+          </ScaleIn>
         </section>
 
         <section id="experience" className="py-12">
-          <h2 className="text-3xl font-extrabold mb-6 text-center">Experience</h2>
-          <Experience items={data.experience} />
+          <SlideIn direction="right" delay={0.1}>
+            <h2 className="text-3xl font-extrabold mb-6 text-center">Experience</h2>
+          </SlideIn>
+          <SlideIn direction="right" delay={0.3}>
+            <Experience items={data.experience} />
+          </SlideIn>
         </section>
 
         <section id="achievements" className="py-12">
-          <h2 className="text-3xl font-extrabold mb-6 text-center">Achievements</h2>
-          <Achievements items={data.achievements} />
+          <FadeIn delay={0.1}>
+            <h2 className="text-3xl font-extrabold mb-6 text-center">Achievements</h2>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <Achievements items={data.achievements} />
+          </FadeIn>
         </section>
 
         <section id="contact" className="py-12">
-          <h2 className="text-3xl font-extrabold mb-6 text-center">Contact</h2>
-          <Contact {...data.profile} />
+          <SlideIn direction="up" delay={0.1}>
+            <h2 className="text-3xl font-extrabold mb-6 text-center">Contact</h2>
+          </SlideIn>
+          <SlideIn direction="up" delay={0.3}>
+            <Contact {...data.profile} />
+          </SlideIn>
         </section>
       </main>
 
