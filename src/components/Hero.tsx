@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 type Props = {
   name: string
@@ -7,92 +7,71 @@ type Props = {
   links: { label: string; href: string }[]
 }
 
-function TypingCodeBackground() {
-  const snippets = useRef<string[]>([
-`// LLM Agent pipeline
-const tools = ["webSearch", "scrape", "summarize"]
-for (const t of tools) agent.use(t)
-const result = await agent.run("Compare vector DBs for RAG")`,
-`# Streaming inference
-from fastapi import FastAPI
-from sse_starlette.sse import EventSourceResponse
-app = FastAPI()`,
-`// Kafka -> Glue ETL
-const cleaned = consume("telemetry",{parallelism:8})
-  .map(parseJSON).filter(x=>x.deviceId && x.ts)`
-  ]).current
-
-  const [text, setText] = useState('')
-  const iRef = useRef(0), jRef = useRef(0)
-  const dirRef = useRef<'type' | 'erase'>('type')
-
-  useEffect(() => {
-    let t: number
-    const tick = () => {
-      const s = snippets[iRef.current]
-      if (dirRef.current === 'type') {
-        setText(s.slice(0, jRef.current + 1))
-        jRef.current++
-        if (jRef.current >= s.length) { dirRef.current = 'erase'; t = window.setTimeout(tick, 1200); return }
-        t = window.setTimeout(tick, 18)
-      } else {
-        setText(s.slice(0, jRef.current - 1))
-        jRef.current--
-        if (jRef.current <= 0) { dirRef.current = 'type'; iRef.current = (iRef.current + 1) % snippets.length }
-        t = window.setTimeout(tick, 8)
-      }
-    }
-    t = window.setTimeout(tick, 300)
-    return () => clearTimeout(t)
-  }, [])
-
-  return (
-    <div className="absolute inset-0 overflow-hidden rounded-2xl">
-      <div className="hero-anim pointer-events-none" />
-      <pre className="hero-code">{text}<span className="caret" /></pre>
-    </div>
-  )
-}
-
-function TypingTitle({ full }: { full: string }) {
-  const [shown, setShown] = useState('')
-  const idx = useRef(0)
-  useEffect(() => {
-    let t: number
-    const type = () => {
-      if (idx.current <= full.length) {
-        setShown(full.slice(0, idx.current))
-        idx.current += 1
-        t = window.setTimeout(type, 45)
-      }
-    }
-    type()
-    return () => clearTimeout(t)
-  }, [full])
-  return <span aria-label={full}>{shown}<span className="title-caret" /></span>
-}
-
 export function Hero({ name, title, tagline, links }: Props) {
-  const headline = `Hello, I'm ${name}.`
   return (
-    <section className="py-12">
-      <div className="relative rounded-2xl overflow-hidden">
-        <div
-          className="h-56 sm:h-64 md:h-72 w-full"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=2000&auto=format&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center' }}
-        />
-        <TypingCodeBackground />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4 text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold"><TypingTitle full={headline} /></h1>
-          <p className="mt-2 text-base md:text-lg opacity-90">{title}</p>
-          <p className="mt-1 text-sm opacity-80">{tagline}</p>
-          <div className="mt-4 flex gap-3 flex-wrap justify-center">
-            {links.map((l) => (
-              <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
-                 className="px-4 py-2 bg-white text-black rounded-full text-sm font-semibold hover:opacity-90">
-                {l.label}
-              </a>
-            ))}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-800" />
+      
+      {/* Floating geometric shapes for visual interest */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
+
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        {/* Main headline with floating animation */}
+        <div className="mb-8 relative">
+          {/* Floating accent elements */}
+          <div className="absolute -top-8 -left-8 w-4 h-4 bg-blue-500/20 rounded-full animate-pulse apple-floating-accent-1" />
+          <div className="absolute -top-4 -right-12 w-3 h-3 bg-purple-500/20 rounded-full animate-pulse apple-floating-accent-2" />
+          <div className="absolute -bottom-6 left-1/4 w-2 h-2 bg-emerald-500/20 rounded-full animate-pulse apple-floating-accent-3" />
+          <div className="absolute -bottom-4 right-1/3 w-3 h-3 bg-cyan-500/20 rounded-full animate-pulse apple-floating-accent-4" />
+          
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light tracking-tight text-gray-900 dark:text-white mb-4 apple-floating-enhanced">
+            {name}
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+        </div>
+
+        {/* Subtitle */}
+        <div className="mb-12">
+          <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-600 dark:text-gray-300 mb-2">
+            {title}
+          </p>
+          <p className="text-base md:text-lg text-gray-500 dark:text-gray-400">
+            {tagline}
+          </p>
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {links.map((link, index) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                group relative px-8 py-4 rounded-full font-medium text-base transition-all duration-300
+                ${index === 0 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl' 
+                  : 'bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 shadow-sm hover:shadow-md'
+                }
+              `}
+            >
+              <span className="relative z-10">{link.label}</span>
+              {index === 0 && (
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
+            </a>
+          ))}
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-bounce" />
           </div>
         </div>
       </div>

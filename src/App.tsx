@@ -17,62 +17,72 @@ const App: React.FC = () => {
   }, [dark])
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar dark={dark} setDark={setDark} />
 
-      <main className="max-w-6xl mx-auto px-4">
-        <FadeIn duration={0.8} delay={0.2}>
-          <Hero {...data.profile} />
-        </FadeIn>
+      <main>
+        <Hero {...data.profile} />
 
-        <section id="about" className="py-12">
-          <SlideIn direction="left" delay={0.1}>
-            <h2 className="text-3xl font-extrabold mb-6 text-center">About Me</h2>
-          </SlideIn>
-          <SlideIn direction="left" delay={0.3}>
-            <About text={data.about} />
-          </SlideIn>
+        <section id="about" className="apple-section">
+          <div className="apple-container">
+            <FadeIn duration={0.8} delay={0.2}>
+              <h2 className="apple-heading text-center mb-16">About Me</h2>
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <About text={data.about} />
+            </FadeIn>
+          </div>
         </section>
 
-        <section id="projects" className="py-12">
-          <FadeIn delay={0.1}>
-            <h2 className="text-3xl font-extrabold mb-6 text-center">Projects</h2>
-          </FadeIn>
-          <ScaleIn delay={0.3}>
-            <Projects items={data.projects} />
-          </ScaleIn>
+        <section id="projects" className="apple-section bg-gray-50 dark:bg-gray-900/50">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Projects</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Projects items={data.projects} />
+            </FadeIn>
+          </div>
         </section>
 
-        <section id="experience" className="py-12">
-          <SlideIn direction="right" delay={0.1}>
-            <h2 className="text-3xl font-extrabold mb-6 text-center">Experience</h2>
-          </SlideIn>
-          <SlideIn direction="right" delay={0.3}>
-            <Experience items={data.experience} />
-          </SlideIn>
+        <section id="experience" className="apple-section">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Experience</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Experience items={data.experience} />
+            </FadeIn>
+          </div>
         </section>
 
-        <section id="achievements" className="py-12">
-          <FadeIn delay={0.1}>
-            <h2 className="text-3xl font-extrabold mb-6 text-center">Achievements</h2>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <Achievements items={data.achievements} />
-          </FadeIn>
+        <section id="achievements" className="apple-section bg-gray-50 dark:bg-gray-900/50">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Achievements</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Achievements items={data.achievements} />
+            </FadeIn>
+          </div>
         </section>
 
-        <section id="contact" className="py-12">
-          <SlideIn direction="up" delay={0.1}>
-            <h2 className="text-3xl font-extrabold mb-6 text-center">Contact</h2>
-          </SlideIn>
-          <SlideIn direction="up" delay={0.3}>
-            <Contact {...data.profile} />
-          </SlideIn>
+        <section id="contact" className="apple-section">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Contact</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Contact {...data.profile} />
+            </FadeIn>
+          </div>
         </section>
       </main>
 
-      <footer className="text-center py-8 text-sm opacity-70">
-        © {new Date().getFullYear()} {data.profile.name}. Built with React + Tailwind.
+      <footer className="text-center py-16 text-gray-500 dark:text-gray-400">
+        <div className="apple-container">
+          <p>© {new Date().getFullYear()} {data.profile.name}. Built with React + Tailwind.</p>
+        </div>
       </footer>
     </div>
   )

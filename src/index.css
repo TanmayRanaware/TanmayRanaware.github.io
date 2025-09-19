@@ -2,44 +2,318 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light dark; }
-html { scroll-behavior: smooth; }
-
-/* Cards (light + dark) */
-.card {
-  @apply rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-6 border;
-  @apply bg-white text-neutral-900 border-neutral-200;
-}
-.dark .card { @apply bg-zinc-900 text-zinc-50 border-white/10; }
-
-/* Tech chips */
-.chip { @apply text-xs px-2 py-1 rounded-full border bg-zinc-100 border-neutral-300; }
-.dark .chip { @apply border-white/20 bg-white/5 text-zinc-100; }
-
-/* “Live” animated gradient behind hero */
-.hero-anim {
-  position: absolute; inset: 0; filter: blur(30px); opacity: 0.9;
-  background:
-    radial-gradient(120px 120px at 20% 30%, #a855f755, transparent 60%),
-    radial-gradient(140px 140px at 80% 30%, #9333ea55, transparent 60%),
-    radial-gradient(160px 160px at 50% 80%, #c084fc55, transparent 60%);
-  animation: heroFloat 10s ease-in-out infinite alternate; pointer-events: none;
-}
-@keyframes heroFloat { 0%{transform:translate3d(-8px,-6px,0) scale(1.02)} 100%{transform:translate3d(8px,6px,0) scale(1.04)} }
-
-/* Typing code layer */
-.hero-code{
-  position:absolute; inset:0; margin:0; padding:24px;
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  font-size:13px; line-height:1.45; white-space:pre-wrap;
-  color:#c084fc; opacity:.85; mix-blend-mode:lighten; pointer-events:none;
-  mask-image:linear-gradient(to bottom, transparent, rgba(0,0,0,.9) 15%, rgba(0,0,0,1) 60%, transparent);
+:root { 
+  color-scheme: light dark;
+  --apple-blue: #007AFF;
+  --apple-purple: #AF52DE;
+  --apple-green: #30D158;
+  --apple-orange: #FF9500;
+  --apple-red: #FF3B30;
 }
 
-/* Carets */
-.caret{display:inline-block;width:8px;margin-left:2px;background:currentColor;animation:blink 1s steps(2,start) infinite}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.title-caret{display:inline-block;width:2px;height:.9em;margin-left:4px;background:currentColor;vertical-align:-.05em;animation:blink 1s steps(2,start) infinite}
+html { 
+  scroll-behavior: smooth; 
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* Page backgrounds */
-body { @apply bg-zinc-50 text-neutral-900 dark:bg-zinc-950 dark:text-zinc-50; }
+body { 
+  @apply bg-white text-gray-900 dark:bg-black dark:text-white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Apple-style cards with glass morphism */
+.apple-card {
+  @apply rounded-3xl p-8 backdrop-blur-xl border;
+  @apply bg-white/80 dark:bg-gray-900/80;
+  @apply border-gray-200/50 dark:border-gray-700/50;
+  @apply shadow-lg shadow-gray-200/20 dark:shadow-gray-900/20;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apple-card:hover {
+  @apply shadow-xl shadow-gray-200/30 dark:shadow-gray-900/30;
+  transform: translateY(-2px);
+}
+
+/* Apple-style buttons */
+.apple-button {
+  @apply px-8 py-4 rounded-full font-medium text-base;
+  @apply transition-all duration-300 ease-out;
+  @apply active:scale-95;
+}
+
+.apple-button-primary {
+  @apply bg-blue-600 text-white shadow-lg;
+  @apply hover:bg-blue-700 hover:shadow-xl;
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+}
+
+.apple-button-secondary {
+  @apply bg-white/80 dark:bg-gray-800/80;
+  @apply text-gray-900 dark:text-white;
+  @apply border border-gray-200/50 dark:border-gray-700/50;
+  @apply hover:bg-white dark:hover:bg-gray-800;
+  @apply shadow-sm hover:shadow-md;
+}
+
+/* Tech chips with Apple styling */
+.chip { 
+  @apply text-sm px-4 py-2 rounded-full font-medium;
+  @apply bg-gray-100/80 dark:bg-gray-800/80;
+  @apply text-gray-700 dark:text-gray-300;
+  @apply border border-gray-200/50 dark:border-gray-700/50;
+  @apply backdrop-blur-sm;
+  transition: all 0.2s ease-out;
+}
+
+.chip:hover {
+  @apply bg-gray-200/80 dark:bg-gray-700/80;
+  transform: scale(1.05);
+}
+
+/* Apple-style section spacing */
+.apple-section {
+  @apply py-24 lg:py-32;
+}
+
+.apple-container {
+  @apply max-w-6xl mx-auto px-6 lg:px-8;
+}
+
+/* Apple-style typography */
+.apple-heading {
+  @apply text-4xl md:text-5xl lg:text-6xl font-light;
+  @apply text-gray-900 dark:text-white;
+  @apply tracking-tight leading-tight;
+}
+
+.apple-subheading {
+  @apply text-2xl md:text-3xl font-light;
+  @apply text-gray-600 dark:text-gray-300;
+  @apply tracking-tight;
+}
+
+.apple-body {
+  @apply text-lg md:text-xl font-normal;
+  @apply text-gray-600 dark:text-gray-400;
+  @apply leading-relaxed;
+}
+
+/* Apple-style animations */
+@keyframes apple-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes apple-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.apple-fade-in {
+  animation: apple-fade-in 0.6s ease-out;
+}
+
+.apple-scale-in {
+  animation: apple-scale-in 0.4s ease-out;
+}
+
+/* Smooth scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Apple-style gradients */
+.gradient-blue {
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #AF52DE 0%, #5856D6 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #30D158 0%, #00C7BE 100%);
+}
+
+/* Apple-style floating name animation */
+.apple-floating-name {
+  animation: apple-float 8s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes apple-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate3d(5px, -8px, 0) rotate(0.5deg) scale(1.01);
+  }
+  50% {
+    transform: translate3d(-3px, -12px, 0) rotate(-0.3deg) scale(1.02);
+  }
+  75% {
+    transform: translate3d(-8px, -5px, 0) rotate(0.2deg) scale(1.01);
+  }
+}
+
+/* Enhanced floating with parallax effect */
+.apple-floating-enhanced {
+  animation: apple-float-enhanced 12s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes apple-float-enhanced {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translate3d(8px, -12px, 0) rotate(0.8deg) scale(1.015);
+  }
+  20% {
+    transform: translate3d(12px, -8px, 0) rotate(0.5deg) scale(1.02);
+  }
+  30% {
+    transform: translate3d(5px, -15px, 0) rotate(-0.3deg) scale(1.025);
+  }
+  40% {
+    transform: translate3d(-5px, -10px, 0) rotate(-0.8deg) scale(1.02);
+  }
+  50% {
+    transform: translate3d(-12px, -5px, 0) rotate(-0.5deg) scale(1.015);
+  }
+  60% {
+    transform: translate3d(-8px, -12px, 0) rotate(0.3deg) scale(1.01);
+  }
+  70% {
+    transform: translate3d(-3px, -8px, 0) rotate(0.6deg) scale(1.005);
+  }
+  80% {
+    transform: translate3d(3px, -5px, 0) rotate(-0.2deg) scale(1.01);
+  }
+  90% {
+    transform: translate3d(6px, -3px, 0) rotate(0.4deg) scale(1.015);
+  }
+}
+
+/* Subtle breathing effect */
+.apple-breathe {
+  animation: apple-breathe 4s ease-in-out infinite;
+}
+
+@keyframes apple-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Floating accent elements */
+.apple-floating-accent-1 {
+  animation: apple-accent-float-1 6s ease-in-out infinite;
+}
+
+.apple-floating-accent-2 {
+  animation: apple-accent-float-2 8s ease-in-out infinite;
+}
+
+.apple-floating-accent-3 {
+  animation: apple-accent-float-3 7s ease-in-out infinite;
+}
+
+.apple-floating-accent-4 {
+  animation: apple-accent-float-4 9s ease-in-out infinite;
+}
+
+@keyframes apple-accent-float-1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(10px, -15px, 0) rotate(90deg);
+  }
+  50% {
+    transform: translate3d(-5px, -25px, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(-15px, -10px, 0) rotate(270deg);
+  }
+}
+
+@keyframes apple-accent-float-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(-12px, -20px, 0) rotate(120deg);
+  }
+  66% {
+    transform: translate3d(8px, -30px, 0) rotate(240deg);
+  }
+}
+
+@keyframes apple-accent-float-3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  40% {
+    transform: translate3d(15px, -18px, 0) rotate(144deg);
+  }
+  80% {
+    transform: translate3d(-10px, -12px, 0) rotate(288deg);
+  }
+}
+
+@keyframes apple-accent-float-4 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(-8px, -22px, 0) rotate(72deg);
+  }
+  40% {
+    transform: translate3d(12px, -35px, 0) rotate(144deg);
+  }
+  60% {
+    transform: translate3d(18px, -15px, 0) rotate(216deg);
+  }
+  80% {
+    transform: translate3d(5px, -8px, 0) rotate(288deg);
+  }
+}
