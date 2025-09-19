@@ -10,10 +10,18 @@ import { FadeIn, SlideIn, ScaleIn } from './components/animations'
 import data from './data/content'
 
 const App: React.FC = () => {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(() => {
+    // Check localStorage first, then system preference, default to light
+    const saved = localStorage.getItem('darkMode')
+    if (saved !== null) {
+      return saved === 'true'
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
+    localStorage.setItem('darkMode', dark.toString())
   }, [dark])
 
   return (
