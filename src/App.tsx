@@ -11,12 +11,13 @@ import data from './data/content'
 
 const App: React.FC = () => {
   const [dark, setDark] = useState(() => {
-    // Check localStorage first, then system preference, default to light
+    // Check localStorage first, then system preference, default to dark
     const saved = localStorage.getItem('darkMode')
     if (saved !== null) {
       return saved === 'true'
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    // Default to dark mode for first-time visitors
+    return true
   })
 
   useEffect(() => {
