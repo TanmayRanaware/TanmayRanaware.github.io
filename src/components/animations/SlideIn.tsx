@@ -59,3 +59,4 @@ export const SlideIn: React.FC<SlideInProps> = ({
     </motion.div>
   )
 }
+

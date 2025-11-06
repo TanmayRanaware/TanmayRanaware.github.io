@@ -49,3 +49,4 @@ export const ScaleIn: React.FC<ScaleInProps> = ({
     </motion.div>
   )
 }
+
