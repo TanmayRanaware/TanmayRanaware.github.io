@@ -11,7 +11,7 @@ export function Hero({ name, title, tagline, links }: Props) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Cinematic Background with Multiple Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 dark:from-black dark:via-slate-900 dark:to-blue-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-blue-900" />
       
       {/* Neural Network Grid Background */}
       <div className="absolute inset-0 opacity-20">
@@ -75,8 +75,8 @@ export function Hero({ name, title, tagline, links }: Props) {
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-blue-200 mb-4 tracking-wide">
             {title}
           </p>
-          <p className="text-base md:text-lg text-gray-400 font-mono">
-            {tagline} • AI_ML_ENGINEER • 2024
+          <p className="text-base md:text-lg text-gray-400 font-mono text-center">
+            {tagline}
           </p>
         </div>
 

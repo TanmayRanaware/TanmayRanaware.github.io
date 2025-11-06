@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root { 
-  color-scheme: light dark;
+  color-scheme: dark;
   --apple-blue: #007AFF;
   --apple-purple: #AF52DE;
   --apple-green: #30D158;
@@ -19,14 +19,11 @@ html {
 }
 
 body { 
-  @apply bg-white text-gray-900 dark:bg-black dark:text-white;
+  @apply bg-black text-white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40"><rect x="2" y="6" width="20" height="28" rx="10" ry="10" fill="%23000000"/><rect x="6" y="10" width="12" height="20" rx="6" ry="6" fill="%23ffffff"/><rect x="8" y="12" width="8" height="16" rx="4" ry="4" fill="%23000000"/><circle cx="12" cy="20" r="1" fill="%23ffffff"/><rect x="4" y="2" width="16" height="8" rx="4" ry="4" fill="%23000000"/><rect x="6" y="4" width="12" height="4" rx="2" ry="2" fill="%23ffffff"/></svg>') 16 8, auto;
-}
-
-.dark body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40"><rect x="2" y="6" width="20" height="28" rx="10" ry="10" fill="%23ffffff"/><rect x="6" y="10" width="12" height="20" rx="6" ry="6" fill="%23000000"/><rect x="8" y="12" width="8" height="16" rx="4" ry="4" fill="%23ffffff"/><circle cx="12" cy="20" r="1" fill="%23000000"/><rect x="4" y="2" width="16" height="8" rx="4" ry="4" fill="%23ffffff"/><rect x="6" y="4" width="12" height="4" rx="2" ry="2" fill="%23000000"/></svg>') 16 8, auto;
 }
+
 
 /* Interactive elements get pointer cursor */
 a, button, [role="button"] {
@@ -36,14 +33,14 @@ a, button, [role="button"] {
 /* Apple-style cards with glass morphism */
 .apple-card {
   @apply rounded-3xl p-8 backdrop-blur-xl border;
-  @apply bg-white/80 dark:bg-gray-900/80;
-  @apply border-gray-200/50 dark:border-gray-700/50;
-  @apply shadow-lg shadow-gray-200/20 dark:shadow-gray-900/20;
+  @apply bg-gray-900/80;
+  @apply border-gray-700/50;
+  @apply shadow-lg shadow-gray-900/20;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .apple-card:hover {
-  @apply shadow-xl shadow-gray-200/30 dark:shadow-gray-900/30;
+  @apply shadow-xl shadow-gray-900/30;
   transform: translateY(-2px);
 }
 
@@ -61,25 +58,25 @@ a, button, [role="button"] {
 }
 
 .apple-button-secondary {
-  @apply bg-white/80 dark:bg-gray-800/80;
-  @apply text-gray-900 dark:text-white;
-  @apply border border-gray-200/50 dark:border-gray-700/50;
-  @apply hover:bg-white dark:hover:bg-gray-800;
+  @apply bg-gray-800/80;
+  @apply text-white;
+  @apply border border-gray-700/50;
+  @apply hover:bg-gray-800;
   @apply shadow-sm hover:shadow-md;
 }
 
 /* Tech chips with Apple styling */
 .chip { 
   @apply text-sm px-4 py-2 rounded-full font-medium;
-  @apply bg-gray-100/80 dark:bg-gray-800/80;
-  @apply text-gray-700 dark:text-gray-300;
-  @apply border border-gray-200/50 dark:border-gray-700/50;
+  @apply bg-gray-800/80;
+  @apply text-gray-300;
+  @apply border border-gray-700/50;
   @apply backdrop-blur-sm;
   transition: all 0.2s ease-out;
 }
 
 .chip:hover {
-  @apply bg-gray-200/80 dark:bg-gray-700/80;
+  @apply bg-gray-700/80;
   transform: scale(1.05);
 }
 
@@ -95,19 +92,19 @@ a, button, [role="button"] {
 /* Apple-style typography */
 .apple-heading {
   @apply text-4xl md:text-5xl lg:text-6xl font-light;
-  @apply text-gray-900 dark:text-white;
+  @apply text-white;
   @apply tracking-tight leading-tight;
 }
 
 .apple-subheading {
   @apply text-2xl md:text-3xl font-light;
-  @apply text-gray-600 dark:text-gray-300;
+  @apply text-gray-300;
   @apply tracking-tight;
 }
 
 .apple-body {
   @apply text-lg md:text-xl font-normal;
-  @apply text-gray-600 dark:text-gray-400;
+  @apply text-gray-400;
   @apply leading-relaxed;
 }
 
@@ -156,13 +153,8 @@ a, button, [role="button"] {
 
 /* Glass morphism effects */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dark .glass {
   background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
@@ -10,24 +10,14 @@ import { FadeIn, SlideIn, ScaleIn } from './components/animations'
 import data from './data/content'
 
 const App: React.FC = () => {
-  const [dark, setDark] = useState(() => {
-    // Check localStorage first, then system preference, default to dark
-    const saved = localStorage.getItem('darkMode')
-    if (saved !== null) {
-      return saved === 'true'
-    }
-    // Default to dark mode for first-time visitors
-    return true
-  })
-
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('darkMode', dark.toString())
-  }, [dark])
+    // Always set dark mode
+    document.documentElement.classList.add('dark')
+  }, [])
 
   return (
     <div className="min-h-screen">
-      <Navbar dark={dark} setDark={setDark} />
+      <Navbar />
 
       <main>
         <Hero {...data.profile} />
@@ -43,7 +33,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="projects" className="apple-section bg-gray-50 dark:bg-gray-900/50">
+        <section id="projects" className="apple-section bg-gray-900/50">
           <div className="apple-container">
             <FadeIn delay={0.1}>
               <h2 className="apple-heading text-center mb-16">Projects</h2>
@@ -65,7 +55,7 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="achievements" className="apple-section bg-gray-50 dark:bg-gray-900/50">
+        <section id="achievements" className="apple-section bg-gray-900/50">
           <div className="apple-container">
             <FadeIn delay={0.1}>
               <h2 className="apple-heading text-center mb-16">Achievements</h2>
@@ -88,7 +78,7 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <footer className="text-center py-16 text-gray-500 dark:text-gray-400">
+      <footer className="text-center py-16 text-gray-400">
         <div className="apple-container">
           <p>© {new Date().getFullYear()} {data.profile.name}. Built with React + Tailwind.</p>
         </div>
