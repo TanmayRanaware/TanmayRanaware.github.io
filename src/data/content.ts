@@ -9,7 +9,7 @@ const data = {
     links: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/tanmayranaware14/" },
       { label: "GitHub", href: "https://github.com/TanmayRanaware" },
-      { label: "Download Resume", href: "/Tanmay_Ranaware_AI.pdf" }
+      { label: "Download Resume", href: "/Tanmay_Ranaware_Resume.pdf" }
     ]
   },
 
@@ -90,12 +90,12 @@ const data = {
   ],
 
   achievements: [
+    { text: "Open Source Contribution - Super Contributor in Hacktoberfest 2025", image: "/images/hacktoberfest-2025-badge.png" },
     "Google Cloud Badges: Prompt Design in Vertex AI (Apr 2025)",
     "Build Real-World AI Apps with Gemini and Imagen (Apr 2025)",
     "Develop GenAI Apps with Gemini and Streamlit (Apr 2025)",
     "Inspect Rich Documents with Gemini Multimodality and RAG (Apr 2025)",
-    "Explore Generative AI with Vertex AI Gemini API (Apr 2025)",
-    { text: "Open Source Contribution - Super Contributor in Hacktoberfest 2025", image: "/images/hacktoberfest-2025-badge.png" }
+    "Explore Generative AI with Vertex AI Gemini API (Apr 2025)"
   ]
 } as const
 

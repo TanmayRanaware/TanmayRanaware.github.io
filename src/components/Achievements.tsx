@@ -86,7 +86,10 @@ export function Achievements({ items }: { items: Achievement[] }) {
                 </div>
               </div>
 
-              {/* Achievement Image */}
+              {/* Achievement Content - Heading first */}
+              <p className="text-gray-300 text-sm font-semibold mb-4 leading-relaxed">{achievementText}</p>
+
+              {/* Achievement Image - Below heading */}
               {achievementImage && (
                 <div className="mb-4 flex justify-center">
                   <img 
@@ -100,9 +103,6 @@ export function Achievements({ items }: { items: Achievement[] }) {
                   />
                 </div>
               )}
-
-              {/* Achievement Content */}
-              <p className="text-gray-300 text-sm leading-relaxed">{achievementText}</p>
 
               {/* Achievement Badge */}
               <div className="mt-4 flex items-center gap-2">
