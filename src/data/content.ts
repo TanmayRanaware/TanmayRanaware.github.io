@@ -1,7 +1,7 @@
 const data = {
   profile: {
     name: "Tanmay Ranaware",
-    title: "Artificial Intelligence • Machine Learning • Software Engineering",
+    title: "Software Engineering • Artificial Intelligence",
     tagline: "San Jose, California",
     email: "tanmayranware14@gmail.com",
     phone: "+1 408-549-6932",
