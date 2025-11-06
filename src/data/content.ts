@@ -18,6 +18,12 @@ const data = {
 
   projects: [
     {
+      title: "CryptoStream Gateway",
+      description: "Production-grade real-time transaction streaming gateway for crypto trade simulation with sub-100ms latency. Supports 50k+ concurrent WebSocket connections, 500k+ messages/second throughput, with Kafka event backbone, Redis caching, and comprehensive monitoring.",
+      tech: ["Go", "Node.js", "Kafka", "Redis", "WebSocket", "Docker", "Kubernetes", "AWS Lambda", "Prometheus", "Grafana", "k6"],
+      links: []
+    },
+    {
       title: "Tool Research AI-Agent",
       description: "LLM research agent with web scraping and structured extraction to automate tool evaluation and synthesize insights.",
       tech: ["LangChain", "LangGraph", "LangSmith", "Python", "Firecrawl"],
