@@ -88,17 +88,6 @@ const data = {
         "Built end-to-end monitoring dashboards using Grafana and Prometheus to visualize pipeline health and latency.",
         "Optimized distributed Spark jobs through performance tuning and testing, integrating unit and integration checks in CI/CD pipelines, which improved deployment reliability by 25%."
       ]
-    },
-    {
-      company: "The Sparks Foundation",
-      role: "Web Development Intern",
-      location: "Bangalore, India",
-      period: "Mar 2022 – Apr 2022",
-      bullets: [
-        "Developed a full-stack data management platform with HTML/CSS/JS.",
-        "Optimized MySQL schemas for efficient queries and analytics.",
-        "Dockerized and deployed on AWS with CI/CD."
-      ]
     }
   ],
 
