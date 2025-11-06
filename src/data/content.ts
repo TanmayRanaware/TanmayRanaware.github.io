@@ -18,6 +18,12 @@ const data = {
 
   projects: [
     {
+      title: "Driftwise",
+      description: "Comprehensive system for monitoring financial contract changes and detecting policy violations using Claude Sonnet 4.5, LangGraph, and LandingAI ADE. Continuously processes financial contracts and automatically generates machine-enforceable validation rules for real-time compliance monitoring with sub-second violation detection.",
+      tech: ["Python", "FastAPI", "LangGraph", "Claude Sonnet 4.5", "LandingAI ADE", "Pathway", "Server-Sent Events", "PDF Processing"],
+      links: []
+    },
+    {
       title: "TraceQA - Enterprise Requirements AI",
       description: "Comprehensive system for managing enterprise requirements, generating test cases, and tracking changes in banking and financial services projects. Features RAG-powered semantic search, version control with semantic diffing, automated test generation, and on-premises deployment with support for local LLMs, Claude, Gemini, and OpenAI.",
       tech: ["Python", "FastAPI", "RAG", "Vector Database", "Docker", "Ollama", "Anthropic Claude", "Google Gemini", "OpenAI", "PDF Processing"],
