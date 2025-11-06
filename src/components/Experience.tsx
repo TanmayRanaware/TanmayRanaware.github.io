@@ -3,7 +3,7 @@ import React from 'react'
 type Subrole = { team: string; bullets: string[] }
 type Exp = {
   company: string; role: string; location?: string; period: string;
-  bullets?: string[]; subroles?: Subrole[]; techStack?: string;
+  bullets?: string[]; subroles?: Subrole[]; techStack?: string; image?: string;
 }
 
 export function Experience({ items }: { items: Exp[] }) {
@@ -103,6 +103,17 @@ export function Experience({ items }: { items: Exp[] }) {
                 </div>
               </div>
             </div>
+
+            {/* Image */}
+            {experience.image && (
+              <div className="mb-4">
+                <img 
+                  src={experience.image} 
+                  alt={`${experience.company} badge`}
+                  className="w-full max-w-xs mx-auto rounded-lg border border-white/20"
+                />
+              </div>
+            )}
 
             {/* Tech Stack */}
             {experience.techStack && (

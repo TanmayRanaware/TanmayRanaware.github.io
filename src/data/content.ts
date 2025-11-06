@@ -86,6 +86,13 @@ const data = {
         "Built Grafana + Prometheus dashboards for real-time pipeline monitoring, reducing alert response time by 25%.",
         "Applied TDD within CI/CD pipelines to automate data validation and regression testing."
       ]
+    },
+    {
+      company: "Hacktoberfest",
+      role: "Open Source Contribution - Super Contributor",
+      location: "Remote",
+      period: "Oct 2025",
+      image: "/images/hacktoberfest-2025-badge.png"
     }
   ],
 
