@@ -14,7 +14,7 @@ const data = {
   },
 
   about:
-    "Software engineer and AI practitioner with hands-on experience building LLM-powered systems, high-scale data pipelines, and production microservices. Comfortable across the ML lifecycle (training, deployment, MLOps) and backend (Java/Spring, Python). Passionate about reliable systems and shipping clean, measurable outcomes.",
+    "Full Stack Developer contributing to all phases of the software development lifecycle. Recognized for delivering scalable, high-performance, maintainable applications with clean architecture, seamless collaboration, and reliable cloud deployment.",
 
   projects: [
     {
@@ -55,25 +55,22 @@ const data = {
       role: "Software Engineer",
       location: "Bangalore, India",
       period: "Jul 2023 – Jun 2025",
-      techStack: "Java, Spring Boot, Python, Redis, MySQL, Kafka, Spark, Docker, Kubernetes, REST, gRPC, CI/CD, Cassandra, Terraform, Jenkins, GitHub Actions, AWS (EC2, EKS, S3, Auto Scale, Lambda, Cost Explorer, Glue, RDS)",
+      techStack: "Java, Spring Boot, Python, Go, Redis, MySQL, Kafka, Spark, Docker, Kubernetes, REST, gRPC, AWS (EC2, EKS, Lambda, CloudWatch, RDS), Terraform, CI/CD (Jenkins)",
       subroles: [
         {
           team: "Financial Services Team",
           bullets: [
-            "Developed high-availability REST APIs and orchestration layers handling loan disbursement and repayment workflows with algorithm-driven validation logic, sustaining 99.9% uptime.",
-            "Engineered scalable document verification and credit scoring pipelines, integrating rule-based decision models.",
-            "Optimized data models and Redis caching, cutting response latency by 40% and improving throughput for loan approval, payment authorization, and transaction reconciliation APIs.",
-            "Built ML-powered risk scoring models using Python and Scikit-learn, integrating predictions into transactional microservices for real-time loan validation.",
-            "Collaborated with product and sales team to build a Multi Agent by fine tuning LLM for risk assessment heuristics, automate fraud checks, and ensure compliance with transactional SLAs using TDD and CI/CD."
+            "Built high-throughput REST and gRPC microservices using Java and Spring Boot, processing thousands of financial transactions per second with 99.9% uptime and low-latency performance.",
+            "Implemented asynchronous event pipelines with Kafka and AWS Lambda for secure, real-time payment orchestration, reducing end-to-end transaction latency by 35%.",
+            "Strengthened platform reliability through test-driven development (TDD), integration testing, and automated CI/CD pipelines, ensuring fault tolerance and auditability across distributed systems."
           ]
         },
         {
           team: "Telematics Team",
           bullets: [
-            "Led the design and implementation of a multilayered GPS Data Ingestion Pipeline using Kafka, Cassandra, and Spark, processing around 100GB/day of telemetry data with 40% improvement in throughput.",
-            "Developed and optimized spatial-matching and route-optimization algorithms for GPS data streams, reducing tracking deviation by 25% and enhancing real-time location accuracy across 20K+ devices.",
-            "Spearheaded migration of Telematics Stack from GCP to AWS, benchmarking Redis vs MySQL bottlenecks and implementing caching practices to cut query latency from 300ms to 40ms by revamping the GPS Subscription System.",
-            "Engineered a Vendor Data Ingestion System for B2B customers enabling seamless telemetry integration."
+            "Designed a real-time data ingestion service using Kafka, Cassandra, and Spark, processing 100 GB+ of telemetry data/day with optimized throughput and parallelism.",
+            "Containerized and deployed scalable microservices with Docker and Kubernetes on AWS EKS, achieving resilient, self-healing cloud infrastructure production stack.",
+            "Developed monitoring and alerting pipelines via AWS CloudWatch and Prometheus, automating anomaly detection and ensuring secure, mission-critical uptime for large-scale distributed services."
           ]
         }
       ]
@@ -83,10 +80,11 @@ const data = {
       role: "Software Engineer Intern",
       location: "Bangalore, India",
       period: "May 2022 – Jun 2022",
+      techStack: "Python, PySpark, Hive, TensorFlow, Docker, Grafana, Prometheus, CI/CD",
       bullets: [
-        "Engineered scalable ETL and ML pipelines to process healthcare data, ensuring regulatory compliance.",
-        "Built end-to-end monitoring dashboards using Grafana and Prometheus to visualize pipeline health and latency.",
-        "Optimized distributed Spark jobs through performance tuning and testing, integrating unit and integration checks in CI/CD pipelines, which improved deployment reliability by 25%."
+        "Engineered ETL pipelines to process healthcare data, ensuring data integrity and compliance.",
+        "Built Grafana + Prometheus dashboards for real-time pipeline monitoring, reducing alert response time by 25%.",
+        "Applied TDD within CI/CD pipelines to automate data validation and regression testing."
       ]
     }
   ],
