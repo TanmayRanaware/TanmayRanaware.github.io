@@ -3,7 +3,7 @@ import React from 'react'
 type Subrole = { team: string; bullets: string[] }
 type Exp = {
   company: string; role: string; location?: string; period: string;
-  bullets?: string[]; subroles?: Subrole[];
+  bullets?: string[]; subroles?: Subrole[]; techStack?: string;
 }
 
 export function Experience({ items }: { items: Exp[] }) {
@@ -103,6 +103,14 @@ export function Experience({ items }: { items: Exp[] }) {
                 </div>
               </div>
             </div>
+
+            {/* Tech Stack */}
+            {experience.techStack && (
+              <div className="mb-4">
+                <p className="text-xs text-gray-400 mb-2 font-mono tracking-wider">TECH STACK</p>
+                <p className="text-sm text-gray-300 leading-relaxed">{experience.techStack}</p>
+              </div>
+            )}
 
             {/* Experience Details */}
             {experience.subroles ? (

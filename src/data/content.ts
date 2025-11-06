@@ -55,34 +55,38 @@ const data = {
       role: "Software Engineer",
       location: "Bangalore, India",
       period: "Jul 2023 – Jun 2025",
+      techStack: "Java, Spring Boot, Python, Redis, MySQL, Kafka, Spark, Docker, Kubernetes, REST, gRPC, CI/CD, Cassandra, Terraform, Jenkins, GitHub Actions, AWS (EC2, EKS, S3, Auto Scale, Lambda, Cost Explorer, Glue, RDS)",
       subroles: [
         {
           team: "Financial Services Team",
           bullets: [
-            "Engineered LLM-powered document analysis workflows, cutting loan collection time by 40–50%.",
-            "Built account aggregator REST APIs (Java, Spring Boot, OneMoney) with circuit breaker patterns for 99.9% uptime.",
-            "Practiced TDD with 90%+ coverage to harden model integrations and accelerate safe ML deploys."
+            "Developed high-availability REST APIs and orchestration layers handling loan disbursement and repayment workflows with algorithm-driven validation logic, sustaining 99.9% uptime.",
+            "Engineered scalable document verification and credit scoring pipelines, integrating rule-based decision models.",
+            "Optimized data models and Redis caching, cutting response latency by 40% and improving throughput for loan approval, payment authorization, and transaction reconciliation APIs.",
+            "Built ML-powered risk scoring models using Python and Scikit-learn, integrating predictions into transactional microservices for real-time loan validation.",
+            "Collaborated with product and sales team to build a Multi Agent by fine tuning LLM for risk assessment heuristics, automate fraud checks, and ensure compliance with transactional SLAs using TDD and CI/CD."
           ]
         },
         {
-          team: "GPS Team",
+          team: "Telematics Team",
           bullets: [
-            "Designed telemetry pipelines (Kafka, AWS Glue) processing 680GB/day for 20k+ IoT devices.",
-            "Built Spring Boot + MySQL + Redis services to cut device checkout latency 170s → 50s.",
-            "Improved observability and autoscaling to sustain 99.99% SLA across clusters."
+            "Led the design and implementation of a multilayered GPS Data Ingestion Pipeline using Kafka, Cassandra, and Spark, processing around 100GB/day of telemetry data with 40% improvement in throughput.",
+            "Developed and optimized spatial-matching and route-optimization algorithms for GPS data streams, reducing tracking deviation by 25% and enhancing real-time location accuracy across 20K+ devices.",
+            "Spearheaded migration of Telematics Stack from GCP to AWS, benchmarking Redis vs MySQL bottlenecks and implementing caching practices to cut query latency from 300ms to 40ms by revamping the GPS Subscription System.",
+            "Engineered a Vendor Data Ingestion System for B2B customers enabling seamless telemetry integration."
           ]
         }
       ]
     },
     {
-      company: "Legato Health Technologies",
+      company: "Legato Health Technologies (Elevance Health)",
       role: "Software Engineer Intern",
       location: "Bangalore, India",
-      period: "May 2022 – Jul 2022",
+      period: "May 2022 – Jun 2022",
       bullets: [
-        "Built synthetic data pipelines (Python, Hive, CTGAN) for privacy-preserving ML.",
-        "Automated distributed telemetry replication to speed up research refreshes.",
-        "Produced statistically preserved datasets to boost reproducibility and compliance."
+        "Engineered scalable ETL and ML pipelines to process healthcare data, ensuring regulatory compliance.",
+        "Built end-to-end monitoring dashboards using Grafana and Prometheus to visualize pipeline health and latency.",
+        "Optimized distributed Spark jobs through performance tuning and testing, integrating unit and integration checks in CI/CD pipelines, which improved deployment reliability by 25%."
       ]
     },
     {
