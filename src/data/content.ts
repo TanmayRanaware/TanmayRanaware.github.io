@@ -86,13 +86,6 @@ const data = {
         "Built Grafana + Prometheus dashboards for real-time pipeline monitoring, reducing alert response time by 25%.",
         "Applied TDD within CI/CD pipelines to automate data validation and regression testing."
       ]
-    },
-    {
-      company: "Hacktoberfest",
-      role: "Open Source Contribution - Super Contributor",
-      location: "Remote",
-      period: "Oct 2025",
-      image: "/images/hacktoberfest-2025-badge.png"
     }
   ],
 
@@ -101,7 +94,8 @@ const data = {
     "Build Real-World AI Apps with Gemini and Imagen (Apr 2025)",
     "Develop GenAI Apps with Gemini and Streamlit (Apr 2025)",
     "Inspect Rich Documents with Gemini Multimodality and RAG (Apr 2025)",
-    "Explore Generative AI with Vertex AI Gemini API (Apr 2025)"
+    "Explore Generative AI with Vertex AI Gemini API (Apr 2025)",
+    { text: "Open Source Contribution - Super Contributor in Hacktoberfest 2025", image: "/images/hacktoberfest-2025-badge.png" }
   ]
 } as const
 
