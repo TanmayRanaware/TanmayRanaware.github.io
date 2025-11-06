@@ -106,11 +106,15 @@ export function Experience({ items }: { items: Exp[] }) {
 
             {/* Image */}
             {experience.image && (
-              <div className="mb-4">
+              <div className="mb-4 flex justify-center">
                 <img 
                   src={experience.image} 
                   alt={`${experience.company} badge`}
-                  className="w-full max-w-xs mx-auto rounded-lg border border-white/20"
+                  className="max-w-xs w-full h-auto rounded-lg border border-white/20 shadow-lg"
+                  onError={(e) => {
+                    console.error('Image failed to load:', experience.image);
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
                 />
               </div>
             )}
