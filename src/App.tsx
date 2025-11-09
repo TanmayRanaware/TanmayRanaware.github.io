@@ -27,6 +27,15 @@ const App: React.FC = () => {
             <FadeIn duration={0.8} delay={0.2}>
               <h2 className="apple-heading text-center mb-16">About Me</h2>
             </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex justify-center mb-12">
+                <img
+                  src="/image.jpg"
+                  alt="About me"
+                  className="rounded-lg max-w-2xl w-full"
+                />
+              </div>
+            </FadeIn>
             <FadeIn delay={0.4}>
               <About text={data.about} />
             </FadeIn>
