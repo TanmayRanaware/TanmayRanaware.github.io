@@ -32,7 +32,7 @@ const App: React.FC = () => {
                 <img
                   src="/image.jpg"
                   alt="About me"
-                  className="rounded-lg max-w-2xl w-full"
+                  className="rounded-full w-48 h-48 object-cover"
                 />
               </div>
             </FadeIn>
