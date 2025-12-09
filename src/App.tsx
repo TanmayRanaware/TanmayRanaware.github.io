@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import { Research } from './components/Research'
 import { Projects } from './components/Projects'
 import { Experience } from './components/Experience'
 import { About } from './components/About'
@@ -42,13 +43,13 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="projects" className="apple-section bg-gray-900/50">
+        <section id="research" className="apple-section bg-gray-900/50">
           <div className="apple-container">
             <FadeIn delay={0.1}>
-              <h2 className="apple-heading text-center mb-16">Projects</h2>
+              <h2 className="apple-heading text-center mb-16">Research</h2>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <Projects items={data.projects} />
+              <Research items={data.research} />
             </FadeIn>
           </div>
         </section>
@@ -60,6 +61,17 @@ const App: React.FC = () => {
             </FadeIn>
             <FadeIn delay={0.3}>
               <Experience items={data.experience} />
+            </FadeIn>
+          </div>
+        </section>
+
+        <section id="projects" className="apple-section bg-gray-900/50">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Projects</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Projects items={data.projects} />
             </FadeIn>
           </div>
         </section>
