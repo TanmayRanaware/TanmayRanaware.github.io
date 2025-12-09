@@ -82,7 +82,8 @@ export function Research({ items }: { items: Research[] }) {
             </div>
 
             {/* Research Description */}
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">{research.description}</p>
+            <p className="text-gray-300 text-sm mb-2 leading-relaxed">{research.description}</p>
+            <p className="text-blue-400 text-sm font-medium mb-4">Currently working</p>
 
             {/* Tech Stack */}
             {research.tech && research.tech.length > 0 && (
