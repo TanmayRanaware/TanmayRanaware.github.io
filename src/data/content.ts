@@ -54,38 +54,13 @@ const data = {
       company: "Blackbuck (Zinka Logistics)",
       role: "Software Engineer",
       location: "Bangalore, India",
-      period: "Jul 2023 – Jun 2025",
-      techStack: "Java, Spring Boot, Python, Go, Redis, MySQL, Kafka, Spark, Docker, Kubernetes, REST, gRPC, AWS (EC2, EKS, Lambda, CloudWatch, RDS), Terraform, CI/CD (Jenkins)",
-      subroles: [
-        {
-          team: "Financial Services Team",
-          bullets: [
-            "Built high-throughput REST and gRPC microservices using Java and Spring Boot, processing thousands of financial transactions per second with 99.9% uptime and low-latency performance.",
-            "Implemented asynchronous event pipelines with Kafka and AWS Lambda for secure, real-time payment orchestration, reducing end-to-end transaction latency by 35%.",
-            "Strengthened platform reliability through test-driven development (TDD), integration testing, and automated CI/CD pipelines, ensuring fault tolerance and auditability across distributed systems."
-          ]
-        },
-        {
-          team: "Telematics Team",
-          bullets: [
-            "Designed a real-time data ingestion service using Kafka, Cassandra, and Spark, processing 100 GB+ of telemetry data/day with optimized throughput and parallelism.",
-            "Containerized and deployed scalable microservices with Docker and Kubernetes on AWS EKS, achieving resilient, self-healing cloud infrastructure production stack.",
-            "Developed monitoring and alerting pipelines via AWS CloudWatch and Prometheus, automating anomaly detection and ensuring secure, mission-critical uptime for large-scale distributed services."
-          ]
-        }
-      ]
+      period: "Jul 2023 – Jun 2025"
     },
     {
       company: "Legato Health Technologies (Elevance Health)",
       role: "Software Engineer Intern",
       location: "Bangalore, India",
-      period: "May 2022 – Jun 2022",
-      techStack: "Python, PySpark, Hive, TensorFlow, Docker, Grafana, Prometheus, CI/CD",
-      bullets: [
-        "Engineered ETL pipelines to process healthcare data, ensuring data integrity and compliance.",
-        "Built Grafana + Prometheus dashboards for real-time pipeline monitoring, reducing alert response time by 25%.",
-        "Applied TDD within CI/CD pipelines to automate data validation and regression testing."
-      ]
+      period: "May 2022 – Jun 2022"
     }
   ],
 

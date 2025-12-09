@@ -1,9 +1,7 @@
 import React from 'react'
 
-type Subrole = { team: string; bullets: string[] }
 type Exp = {
   company: string; role: string; location?: string; period: string;
-  bullets?: string[]; subroles?: Subrole[]; techStack?: string; image?: string;
 }
 
 export function Experience({ items }: { items: Exp[] }) {

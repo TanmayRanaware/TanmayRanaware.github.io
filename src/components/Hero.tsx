@@ -62,12 +62,6 @@ export function Hero({ name, title, tagline, links }: Props) {
             </span>
           </h1>
           
-          {/* Status Line */}
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-blue-300 font-mono tracking-wider">SYSTEM_ONLINE</span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          </div>
         </div>
 
         {/* Enhanced Subtitle */}
