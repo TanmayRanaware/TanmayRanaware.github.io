@@ -24,12 +24,18 @@ const data = {
     },
     {
       title: "RAG system prompt injection defense with content verification",
-      description: "a security filter that stops attackers from hijacking RAG systems through poisoned entities",
+      description: "A security filter that stops attackers from hijacking RAG systems through poisoned entities",
       tech: []
     }
   ],
 
   projects: [
+    {
+      title: "AppLens",
+      description: "Engineered a distributed microservice analysis platform that scans GitHub repositories of microservices and builds interactive 3D dependency graphs visualizing HTTP calls, Kafka flows, and service communication. Developed backend systems in FastAPI + PostgreSQL integrated with CrewAI for error detection and what-if simulations, leveraging vector search (pgvector) for intelligent dependency reasoning. Deployed using Docker Compose, implemented GitHub MCP to get repo data and scan microservices for connections between them, and designed RESTful APIs to query large service graphs efficiently.",
+      tech: ["AWS", "Docker", "Jenkins", "Python", "FastAPI", "PostgreSQL (pgvector)", "Kafka", "CrewAI", "Next.js"],
+      links: []
+    },
     {
       title: "Driftwise",
       description: "Comprehensive system for monitoring financial contract changes and detecting policy violations using Claude Sonnet 4.5, LangGraph, and LandingAI ADE. Continuously processes financial contracts and automatically generates machine-enforceable validation rules for real-time compliance monitoring with sub-second violation detection.",
