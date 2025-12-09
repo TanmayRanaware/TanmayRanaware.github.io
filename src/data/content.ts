@@ -14,12 +14,12 @@ const data = {
   },
 
   about:
-    "Full Stack Developer contributing to all phases of the software development lifecycle. Recognized for delivering scalable, high-performance, maintainable applications with clean architecture, seamless collaboration, and reliable cloud deployment.\n\nWith hands-on experience at Blackbuck (Zinka Logistics) and Legato Health Technologies (Elevance Health), I've developed and deployed production grade microservices, optimized data pipelines, and designed cloud infrastructure using AWS, Kubernetes, and Terraform. My work blends strong fundamentals in software architecture, data engineering, and DevOps automation.\n\nI love working across the stack from backend services and APIs to frontend interfaces and cloud orchestration. Beyond coding, I'm an open-source contributor, a Hacktoberfest 2025 Super Contributor, and a Google Cloud-certified GenAI developer, constantly exploring new technologies like LangChain, Vertex AI, and RAG systems.",
+    "Software Engineer contributing to all phases of the software development lifecycle. Recognized for delivering scalable, high-performance, maintainable applications with clean architecture, seamless collaboration, and reliable cloud deployment.\n\nWith hands-on experience at Blackbuck (Zinka Logistics) and Legato Health Technologies (Elevance Health), I've developed and deployed production grade microservices, optimized data pipelines, fine-tuned LLM, and designed cloud infrastructure using AWS, Kubernetes, and Terraform. My work blends strong fundamentals in software architecture, data engineering, AI and DevOps automation.\n\nI love working across the stack from backend services and APIs to frontend interfaces and cloud orchestration. Beyond coding, I'm an open-source contributor, a Hacktoberfest 2025 Super Contributor, and a Google Cloud-certified GenAI developer, constantly exploring AI.",
 
   research: [
     {
       title: "Error cascade detection in LLM agent pipelines:",
-      description: "",
+      description: "An error cascade detection system for LLM agent pipelines enabling reliable deployment of agentic AI. Reduced task failure rates through real-time monitoring, cascade prediction, and automated recovery mechanisms.",
       tech: []
     }
   ],
