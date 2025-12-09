@@ -74,88 +74,14 @@ export function Experience({ items }: { items: Exp[] }) {
           <div className={`absolute inset-0 bg-gradient-to-br ${getGradientColors(index).replace('/20', '/5')} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
           
           <div className="relative z-10">
-            {/* Experience Header */}
-            <div className="flex items-start gap-3 mb-4">
+            <div className="flex items-center gap-3">
               <div className={`w-10 h-10 bg-gradient-to-br ${getIconColors(index)} rounded-lg flex items-center justify-center flex-shrink-0`}>
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6" />
                 </svg>
               </div>
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white mb-1">{experience.role}</h3>
-                <p className="text-blue-300 font-medium text-sm mb-1">{experience.company}</p>
-                <div className="flex items-center gap-2 text-xs text-gray-400">
-                  {experience.location && (
-                    <span className="flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      {experience.location}
-                    </span>
-                  )}
-                  <span className="flex items-center gap-1">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {experience.period}
-                  </span>
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-white">{experience.company}</h3>
             </div>
-
-            {/* Image */}
-            {experience.image && (
-              <div className="mb-4 flex justify-center">
-                <img 
-                  src={experience.image} 
-                  alt={`${experience.company} badge`}
-                  className="max-w-xs w-full h-auto rounded-lg border border-white/20 shadow-lg"
-                  onError={(e) => {
-                    console.error('Image failed to load:', experience.image);
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-              </div>
-            )}
-
-            {/* Tech Stack */}
-            {experience.techStack && (
-              <div className="mb-4">
-                <p className="text-xs text-gray-400 mb-2 font-mono tracking-wider">TECH STACK</p>
-                <p className="text-sm text-gray-300 leading-relaxed">{experience.techStack}</p>
-              </div>
-            )}
-
-            {/* Experience Details */}
-            {experience.subroles ? (
-              <div className="space-y-4">
-                {experience.subroles.map((subrole, subIndex) => (
-                  <div key={subIndex} className="border-l-2 border-white/20 pl-4">
-                    <p className="text-sm font-semibold text-white mb-2">{subrole.team}</p>
-                    <ul className="space-y-2">
-                      {subrole.bullets.map((bullet, bulletIndex) => (
-                        <li key={bulletIndex} className="text-sm text-gray-300 flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              experience.bullets && (
-                <div className="space-y-2">
-                  {experience.bullets.map((bullet, bulletIndex) => (
-                    <li key={bulletIndex} className="text-sm text-gray-300 flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
-                      {bullet}
-                    </li>
-                  ))}
-                </div>
-              )
-            )}
           </div>
         </article>
       ))}
