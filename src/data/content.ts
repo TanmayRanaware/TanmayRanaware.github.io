@@ -8,8 +8,7 @@ const data = {
     location: "San Jose, CA",
     links: [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/tanmayranaware14/" },
-      { label: "GitHub", href: "https://github.com/TanmayRanaware" },
-      { label: "Download Resume", href: "/Tanmay_Ranaware_Resume.pdf" }
+      { label: "GitHub", href: "https://github.com/TanmayRanaware" }
     ]
   },
 
