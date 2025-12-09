@@ -21,6 +21,11 @@ const data = {
       title: "Error cascade detection in LLM agent pipelines:",
       description: "An error cascade detection system for LLM agent pipelines enabling reliable deployment of agentic AI. Reduced task failure rates through real-time monitoring, cascade prediction, and automated recovery mechanisms.",
       tech: []
+    },
+    {
+      title: "RAG system prompt injection defense with content verification",
+      description: "a security filter that stops attackers from hijacking RAG systems through poisoned entities",
+      tech: []
     }
   ],
 
