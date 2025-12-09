@@ -2,8 +2,8 @@ import React from 'react'
 
 export function Navbar() {
   const links = [
-    { href: '#research', label: 'Research' },
     { href: '#experience', label: 'Experience' },
+    { href: '#research', label: 'Research' },
     { href: '#projects', label: 'Projects' },
     { href: '#about', label: 'About' },
     { href: '#achievements', label: 'Achievements' },

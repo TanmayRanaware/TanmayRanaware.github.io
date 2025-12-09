@@ -43,24 +43,24 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section id="research" className="apple-section bg-gray-900/50">
-          <div className="apple-container">
-            <FadeIn delay={0.1}>
-              <h2 className="apple-heading text-center mb-16">Research</h2>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <Research items={data.research} />
-            </FadeIn>
-          </div>
-        </section>
-
-        <section id="experience" className="apple-section">
+        <section id="experience" className="apple-section bg-gray-900/50">
           <div className="apple-container">
             <FadeIn delay={0.1}>
               <h2 className="apple-heading text-center mb-16">Experience</h2>
             </FadeIn>
             <FadeIn delay={0.3}>
               <Experience items={data.experience} />
+            </FadeIn>
+          </div>
+        </section>
+
+        <section id="research" className="apple-section">
+          <div className="apple-container">
+            <FadeIn delay={0.1}>
+              <h2 className="apple-heading text-center mb-16">Research</h2>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Research items={data.research} />
             </FadeIn>
           </div>
         </section>
